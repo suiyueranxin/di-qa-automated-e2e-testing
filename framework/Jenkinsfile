@@ -1,0 +1,72 @@
+/*
+This Jenkinsfile is used to test the E2E testing framework itself
+*/
+pipeline {
+  agent any
+  stages {
+    stage("Unit tests") {
+      agent { 
+        dockerfile {reuseNode true}
+      }
+      steps {
+        catchError(buildResult: "UNSTABLE", stageResult: "FAILURE") {
+          sh "coverage run --source=framework --omit=framework/unittests/*,framework/integrationtests/* --branch -m xmlrunner discover -s framework/unittests -o testresults -p test*.py"
+          sh "coverage xml -o testresults/coverage.xml"                    
+        }
+      }
+    }
+    /*
+    stage("Integration tests") {
+      agent { 
+        dockerfile {reuseNode true}
+      }
+      steps {
+        catchError(buildResult: "SUCCESS", stageResult: "FAILURE") {
+          sh "python3 -m xmlrunner discover -s tests -o framework/testresults -p test*.py"
+        }
+      }
+    }
+    */
+  }
+  post {        
+    always {
+      // When using Docker containers which don't have 'dockerfile {reuseNode true}'
+      // we won't be able to collect the test results here. 
+      junit "testresults/*.xml"
+      cobertura coberturaReportFile: 'testresults/coverage.xml'
+    }      
+    unstable { 
+      // Send email in case there are failing tests
+      script {
+        // Get email address of last git committer
+        env.LAST_COMMITTER_EMAIL = sh(script: "git log -1 --format='%ae' $GIT_COMMIT", returnStdout: true).trim()
+      }
+      emailext (
+        recipientProviders: [developers(), requestor(), brokenTestsSuspects()],
+        subject: "FAILED: $BUILD_DISPLAY_NAME of $JOB_NAME",
+        body: """
+        <p><b>There were unexpected test results in project $JOB_NAME</b></p>
+        <p>${env.LAST_COMMITTER_EMAIL} was the last committer. Please check the test results at ${BUILD_URL}testReport/</p>
+        <p>Additional information Project: $JOB_NAME <br>Build Number: $BUILD_NUMBER <br> Build URL: $BUILD_URL</p>
+        """,
+        mimeType: "text/html"
+      )
+    }  
+    changed {
+      // Send email when status has changed back to green / SUCCESS
+      script {
+        if (currentBuild.currentResult == 'SUCCESS') { 
+          emailext (
+            recipientProviders: [developers(), requestor()],
+            subject: "$JOB_NAME is back to normal",
+            body: """
+            <p><b>All tests in project $JOB_NAME are passing again!</b></p>
+            <p>You can check the test results at ${BUILD_URL}testReport/</p>
+            """,
+            mimeType: "text/html"
+          )
+        } 
+      }
+    }      
+  }
+}

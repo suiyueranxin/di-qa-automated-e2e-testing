@@ -1,0 +1,12 @@
+class ClusterConnectionData {
+    ~name
+    ~baseurl
+    ~tenant
+    ~user
+    ~password
+
+    +__init__(name, baseurl)
+    +settenant(tenant)
+    +setuser(user)
+    +setpassword(password)
+}

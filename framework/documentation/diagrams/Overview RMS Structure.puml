@@ -1,0 +1,152 @@
+@startuml RMS Structure
+skinparam monochrome true
+
+hide fields
+hide methods
+hide circle
+
+!include classes/Cluster.iuml
+
+together {
+   !include classes/Modeler.iuml
+   !include classes/Rms.iuml
+   !include classes/Repository.iuml
+   !include classes/Monitoring.iuml
+   !include classes/ConnectionManagement.iuml
+   !include classes/Session.iuml
+}
+
+Cluster *-- Modeler
+Cluster *-- Rms
+Cluster *-- Repository
+Cluster *-- ConnectionManagement
+Cluster *-- Monitoring
+
+Cluster *-- Session
+
+!include classes/ReplicationsModeler.iuml
+Modeler *-down- ReplicationsModeler
+
+!include classes/Replication.iuml
+ReplicationsModeler -down- Replication : creates >
+Repository -down- Replication : stores >
+
+!include classes/ReplicationFlow.iuml
+Rms -down- ReplicationFlow : creates and runs >
+Monitoring -down- ReplicationFlow : monitors >
+Replication .right. ReplicationFlow : defines >
+
+@enduml
+
+@startuml RMS Testcase (old style)
+skinparam monochrome true
+
+(*) --> "Connec to Cluster"
+
+if "Is connection returned?" then
+  -right-> [false] "Fail test!" as connectionFail
+else 
+  --> "Use the Replications in the Modeler of the Cluster 
+to create a new Replication with a given name"
+endif
+
+--> "Set the Source Space on the Replication by 
+providing the Connection Id to the Source System 
+and the name of the Source Container"
+
+--> "Set the Target Space on the Replication 
+by providing the Connection Id to the Target System 
+and the name of the Target Container"
+
+if "Is Target a file / object store?" then
+  -right-> [true] "Obtain Target Space"
+  --> "Set additonal properties on Target Sspace"
+  --> "Create a Task for the given Source Dataset" as createTask
+else
+  --> createTask
+endif 
+
+--> "Save the Repliation"
+
+--> "Deploy the replication which returns the 
+corresponding Replication Flow"
+
+--> "Wait while the Replication Flow is busy
+(being deployed)"
+
+if "Is deployment changerequest status COMPLETED?" then
+  -right-> [false] "Fail test!" as deploymentFail
+else 
+--> "Run the Replication Flow"
+endif
+
+--> "Wait while the Replication Flow is busy
+(being put into run state)"
+
+if "Is run changerequest status COMPLETED?" then
+  -right-> [false] "Fail test!" as runFail
+else 
+  --> (*)
+endif
+
+@enduml
+
+@startuml  RMS runtime aspects test case
+skinparam monochrome true
+skinparam conditionStyle diamond
+
+start
+:Connect to Cluster;
+
+if (Is connection returned?) then 
+  :Use the Replications in the Modeler of the Cluster 
+  to create a new Replication with a given name;
+else (false)
+  #Gray:Fail test!;
+  kill
+endif
+
+:Set the Source Space on the Replication by 
+providing the Connection Id to the Source System 
+and the name of the Source Container;
+
+:Set the Target Space on the Replication 
+by providing the Connection Id to the Target System 
+and the name of the Target Container;
+
+while (Need to set target properties?)
+  :Set property on Target Space;
+endwhile
+
+:Create a Task for the given Source Dataset;
+
+while (Need to add filter?)
+  :Add filter with given Column Name, 
+  Operator and Operand(s) to Task;
+endwhile
+
+:Save the Repliation;
+
+:Deploy the replication which returns the 
+corresponding Replication Flow;
+
+:Wait while the Replication Flow is busy
+(being deployed);
+
+if (Is deployment changerequest status COMPLETED?) then
+  :Run the Replication Flow;
+else (false)
+  #Gray:Fail test!;
+  kill
+endif
+
+:Wait while the Replication Flow is busy
+(being put into run state);
+
+if (Is run changerequest status COMPLETED?) then (false)
+  #Gray:Fail test!;
+  kill
+endif
+
+stop
+@enduml

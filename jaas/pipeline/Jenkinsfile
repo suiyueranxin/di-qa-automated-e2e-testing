@@ -1,0 +1,146 @@
+pipeline {
+  agent {
+    kubernetes {
+      yamlFile 'jaas/project.yaml'
+    }
+  }
+  stages {
+    
+    stage('Start pipeline graph') {
+      steps {
+        container('cit-e2e-testing') {
+          withCredentials([
+            usernamePassword(credentialsId: "CET", usernameVariable: "CET_USER", passwordVariable: "CET_PASSWORD"),
+            usernamePassword(credentialsId: "HANA_EU10", usernameVariable: "HANA_EU10_USER", passwordVariable: "HANA_EU10_PASSWORD")
+            ]) {
+            sh '''
+            echo "Start pipeline graph"
+            whoami
+            resultpath=$WORKSPACE/testresult
+            rm -rf $resultpath
+            rm -rf *.txt
+            rm -rf *.html
+            rm -rf *.xml
+            python tools/runtestcases.py test_start $WORKSPACE/tests/wip/ test*.py ./testresult/startPipeline/
+            '''
+          }
+        }
+      }
+    }
+
+    stage('Validation for the result') {
+      steps {
+        container('cit-e2e-testing'){
+          withCredentials([
+            usernamePassword(credentialsId: "CET", usernameVariable: "CET_USER", passwordVariable: "CET_PASSWORD"),
+            usernamePassword(credentialsId: "HANA_EU10", usernameVariable: "HANA_EU10_USER", passwordVariable: "HANA_EU10_PASSWORD")
+            ]) {
+            catchError(buildResult: 'UNSTABLE', stageResult: 'FAILURE') {
+              sh '''
+              echo "Validation started"
+              retries=$((retries+1))
+              while [ $retries -gt 0 ]
+              do
+                retries=$((retries-1))
+                sleep "$duration"m
+                {
+                  python tools/runtestcases.py test_validation $WORKSPACE/tests/wip/ test*.py testresult/${retries}
+                  status=$?
+                } || echo "There are failed test cases"
+                echo "$retries" > retries.txt
+                if [ $status -eq 0 ]
+                then
+                break
+                fi
+              done
+              if [ $status -ne 0 ]
+              then
+              exit 1
+              fi
+              '''
+            }
+          }
+        }
+      }
+    }
+
+    stage('Copy report to testresult folder') {
+      steps {
+        container('cit-e2e-testing'){
+          sh '''
+          echo "Generate HTML Report"
+          whoami
+          if [ -f retries.txt ]
+          then
+            retrytimes=`cat retries.txt`
+          fi
+          RESULTPATH=$WORKSPACE/testresult/${retrytimes}
+          if [ -d "$RESULTPATH" ]
+          then
+          echo "result file path is:"
+          echo ${RESULTPATH}
+          cp -r $RESULTPATH/* $WORKSPACE/testresult/
+          fi
+          '''
+        }
+      }
+    }
+  }
+  post {
+    always {
+      script{
+        junit "testresult/*.xml"
+      }
+    }
+    unstable{
+      emailext (
+        to: "$recipients",
+        subject: "$BUILD_DISPLAY_NAME of $JOB_NAME",
+        body: """
+        <p><b>There are failed test cases in project $JOB_NAME</b></p>
+        <p>Additional information Project: $JOB_NAME <br>Build Number: $BUILD_NUMBER <br> Build URL: $BUILD_URL</p>
+        """,
+        mimeType: "text/html"
+      )
+    }
+
+    success {
+      emailext (
+        to: "$recipients",
+        subject: "Success: $BUILD_DISPLAY_NAME of $JOB_NAME",
+        body: """
+        <p><b>The test results passed in project $JOB_NAME</b></p>
+        <p>Additional information Project: $JOB_NAME <br>Build Number: $BUILD_NUMBER <br> Build URL: $BUILD_URL</p>
+        """,
+        mimeType: "text/html"
+      )
+    }
+
+    failure {
+      emailext (
+        to: "$recipients",
+        subject: "$BUILD_DISPLAY_NAME of $JOB_NAME",
+        body: """
+        <p><b>Error is thrown in project $JOB_NAME</b></p>
+        <p>You can check the details at ${BUILD_URL}</p>
+        """,
+        mimeType: "text/html"
+      )
+    } 
+  }
+
+  parameters {
+    string(name: 'duration', defaultValue: '40', description: 'duration time(mins) for each retry')
+    string(name: 'retries', defaultValue: '3', description: 'max number for retrying')
+    string(name: 'recipients', defaultValue: 'issac.han@sap.com;amanda.li@sap.com', description: '')
+    string(name: 'TABLE_SUFFIX', defaultValue: 'MASTER', description: 'suffix of target table, please make it unique')
+    string(name: "ABAP_CONN_USER",defaultValue: '', description: 'User name of ABAP connection')
+    password(name: "ABAP_CONN_PASSWD",defaultValue: '', description: 'Password of ABAP connection')
+    string(name: "ABAP_CONN_ASHOST",defaultValue: 'ldciuk5.wdf.sap.corp', description: 'ABAP connection server')
+    string(name: "ABAP_CONN_SYSNR",defaultValue: 'UK5', description: 'ABAP connection type')
+    string(name: "ABAP_CONN_CLIENT",defaultValue: '800', description: 'ABAP client')
+  }
+}
+
+
+

@@ -1,0 +1,41 @@
+**/.DS_Store
+
+# Distribution / packaging
+.Python
+build/
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# PyBuilder
+target/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+**/__pycache__/**
+**/*.pyc
+
+**/.infrabox/**
+/.xmake
+
+# MS Visual Code configuration and settings
+.vscode
+
+# Log files produced by SAP NW RFC
+dev_rfc.log
+
+# Secrets in connection data
+*.secrets.json
+
+# Test and coverage results
+testresults/
+.coverage

@@ -1,0 +1,39 @@
+@startuml Creation of Replication
+skinparam monochrome true
+
+hide fields
+hide methods
+hide circle
+
+!include classes/Cluster.iuml
+show Cluster fields
+
+!include classes/Modeler.iuml
+show Modeler fields
+Cluster::modeler *-down- Modeler
+
+!include classes/ReplicationsModeler.iuml
+show ReplicationsModeler methods
+Modeler::replications *-down- ReplicationsModeler
+
+!include classes/Replication.iuml
+show Replication methods
+
+!include classes/ReplicationSpace.iuml
+show ReplicationSpace methods
+Replication::settargetspace -right- ReplicationSpace : returns
+
+!include classes/ReplicationTask.iuml
+show ReplicationTask methods
+Replication::createtask -right- ReplicationTask : creates
+
+!include classes/ModelerReplication.iuml
+show ModelerReplication methods
+Replication <|-down- ModelerReplication
+ReplicationsModeler::createreplication -right- ModelerReplication : creates >
+
+!include classes/ReplicationFlow.iuml
+show ReplicationFlow methods
+ModelerReplication::deploy -right- ReplicationFlow : creates
+
+@enduml

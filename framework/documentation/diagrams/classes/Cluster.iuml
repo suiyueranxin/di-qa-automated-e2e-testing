@@ -1,0 +1,5 @@
+class Cluster {
+    +modeler : Modeler
+    '+test
+    {static} +connectto(clusterconnectiondata) : Cluster
+}

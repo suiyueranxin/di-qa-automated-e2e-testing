@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="397px" preserveAspectRatio="none" style="width:1019px;height:397px;background:#FFFFFF;" version="1.1" viewBox="0 0 1019 397" width="1019px" zoomAndPan="magnify"><defs><filter height="300%" id="f11m8ogxt7fkcr" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[26b1154f4b01dec99cfe7f1f8bee6bbb]
+class Cluster--><rect codeLine="0" fill="#F8F8F8" filter="url(#f11m8ogxt7fkcr)" height="46.9297" id="Cluster" style="stroke:#383838;stroke-width:1.5;" width="111" x="43.5" y="7"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="40" x="79" y="24.457">Cluster</text><line style="stroke:#383838;stroke-width:1.5;" x1="44.5" x2="153.5" y1="32.0938" y2="32.0938"/><ellipse cx="54.5" cy="43.0938" rx="3" ry="3" style="stroke:#545454;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="85" x="63.5" y="47.5127">modeler : Modeler</text><!--MD5=[e721b76f5aa420a2729476cd3b651377]
+class Modeler--><rect codeLine="0" fill="#F8F8F8" filter="url(#f11m8ogxt7fkcr)" height="46.9297" id="Modeler" style="stroke:#383838;stroke-width:1.5;" width="186" x="7" y="163"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="44" x="78" y="180.457">Modeler</text><line style="stroke:#383838;stroke-width:1.5;" x1="8" x2="192" y1="188.0938" y2="188.0938"/><ellipse cx="18" cy="199.0938" rx="3" ry="3" style="stroke:#545454;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="160" x="27" y="203.5127">replications : ReplicationsModeler</text><!--MD5=[59f1dd4ddd13ecfc85711ce106269ad5]
+class ReplicationsModeler--><rect codeLine="0" fill="#F8F8F8" filter="url(#f11m8ogxt7fkcr)" height="46.9297" id="ReplicationsModeler" style="stroke:#383838;stroke-width:1.5;" width="201" x="10.5" y="312.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="113" x="54.5" y="329.957">ReplicationsModeler</text><line style="stroke:#383838;stroke-width:1.5;" x1="11.5" x2="210.5" y1="337.5938" y2="337.5938"/><ellipse cx="21.5" cy="348.5938" fill="#A6A6A6" rx="3" ry="3" style="stroke:#545454;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="175" x="30.5" y="353.0127">createreplication(name) : Replication</text><!--MD5=[4f33d8ebf40300c8604eb7a84853e668]
+class Replication--><rect codeLine="0" fill="#F8F8F8" filter="url(#f11m8ogxt7fkcr)" height="74.6016" id="Replication" style="stroke:#383838;stroke-width:1.5;" width="311" x="244.5" y="150"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="62" x="369" y="167.457">Replication</text><line style="stroke:#383838;stroke-width:1.5;" x1="245.5" x2="554.5" y1="175.0938" y2="175.0938"/><ellipse cx="255.5" cy="186.0938" fill="#A6A6A6" rx="3" ry="3" style="stroke:#545454;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="199" x="264.5" y="190.5127">setsourcespace(connectionid, container)</text><ellipse cx="255.5" cy="199.9297" fill="#A6A6A6" rx="3" ry="3" style="stroke:#545454;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="285" x="264.5" y="204.3486">settargetspace(connectionid, container) : ReplicationSpace</text><ellipse cx="255.5" cy="213.7656" fill="#A6A6A6" rx="3" ry="3" style="stroke:#545454;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="213" x="264.5" y="218.1846">createtask(sourcedataset) : ReplicationTask</text><!--MD5=[c63432fe2ef77b002fd56f50bfb4c8aa]
+class ReplicationSpace--><rect codeLine="0" fill="#F8F8F8" filter="url(#f11m8ogxt7fkcr)" height="102.2734" id="ReplicationSpace" style="stroke:#383838;stroke-width:1.5;" width="187" x="818.5" y="135"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="97" x="863.5" y="152.457">ReplicationSpace</text><line style="stroke:#383838;stroke-width:1.5;" x1="819.5" x2="1004.5" y1="160.0938" y2="160.0938"/><ellipse cx="829.5" cy="171.0938" fill="#A6A6A6" rx="3" ry="3" style="stroke:#545454;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="93" x="838.5" y="175.5127">setfiletype(filetype)</text><ellipse cx="829.5" cy="184.9297" fill="#A6A6A6" rx="3" ry="3" style="stroke:#545454;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="149" x="838.5" y="189.3486">setgroupdeltaby(groupdeltaby)</text><ellipse cx="829.5" cy="198.7656" fill="#A6A6A6" rx="3" ry="3" style="stroke:#545454;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="161" x="838.5" y="203.1846">setfilecompression(compression)</text><ellipse cx="829.5" cy="212.6016" fill="#A6A6A6" rx="3" ry="3" style="stroke:#545454;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="111" x="838.5" y="217.0205">setfiledilimiter(delimiter)</text><ellipse cx="829.5" cy="226.4375" fill="#A6A6A6" rx="3" ry="3" style="stroke:#545454;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="105" x="838.5" y="230.8564">setfileheader(include)</text><!--MD5=[995fe2c6f5d3e351e45cfc58bfafa050]
+class ReplicationTask--><rect codeLine="0" fill="#F8F8F8" filter="url(#f11m8ogxt7fkcr)" height="74.6016" id="ReplicationTask" style="stroke:#383838;stroke-width:1.5;" width="140" x="643" y="148.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="89" x="668.5" y="165.957">ReplicationTask</text><line style="stroke:#383838;stroke-width:1.5;" x1="644" x2="782" y1="173.5938" y2="173.5938"/><ellipse cx="654" cy="184.5938" fill="#A6A6A6" rx="3" ry="3" style="stroke:#545454;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="114" x="663" y="189.0127">setsourcedataset(path)</text><ellipse cx="654" cy="198.4297" fill="#A6A6A6" rx="3" ry="3" style="stroke:#545454;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="108" x="663" y="202.8486">settargetdataset(path)</text><ellipse cx="654" cy="212.2656" fill="#A6A6A6" rx="3" ry="3" style="stroke:#545454;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="105" x="663" y="216.6846">setloadtype(loadtype)</text><!--MD5=[921b03746322feeb57bb82279313b298]
+class ModelerReplication--><rect codeLine="0" fill="#F8F8F8" filter="url(#f11m8ogxt7fkcr)" height="60.7656" id="ModelerReplication" style="stroke:#383838;stroke-width:1.5;" width="151" x="322.5" y="306"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="106" x="345" y="323.457">ModelerReplication</text><line style="stroke:#383838;stroke-width:1.5;" x1="323.5" x2="472.5" y1="331.0938" y2="331.0938"/><ellipse cx="333.5" cy="342.0938" fill="#A6A6A6" rx="3" ry="3" style="stroke:#545454;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="32" x="342.5" y="346.5127">save()</text><ellipse cx="333.5" cy="355.9297" fill="#A6A6A6" rx="3" ry="3" style="stroke:#545454;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="125" x="342.5" y="360.3486">deploy() : ReplicationFlow</text><!--MD5=[8a6215b7dc8e64ae70c2744f0f74c37a]
+class ReplicationFlow--><rect codeLine="0" fill="#F8F8F8" filter="url(#f11m8ogxt7fkcr)" height="74.6016" id="ReplicationFlow" style="stroke:#383838;stroke-width:1.5;" width="265" x="561.5" y="298"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="88" x="650" y="315.457">ReplicationFlow</text><line style="stroke:#383838;stroke-width:1.5;" x1="562.5" x2="825.5" y1="323.0938" y2="323.0938"/><ellipse cx="572.5" cy="334.0938" fill="#A6A6A6" rx="3" ry="3" style="stroke:#545454;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="239" x="581.5" y="338.5127">getchangerequeststatus() : Changerequeststatus</text><ellipse cx="572.5" cy="347.9297" fill="#A6A6A6" rx="3" ry="3" style="stroke:#545454;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="192" x="581.5" y="352.3486">waitwhilebusy() : Changerequeststatus</text><ellipse cx="572.5" cy="361.7656" fill="#A6A6A6" rx="3" ry="3" style="stroke:#545454;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="70" x="581.5" y="366.1846">runorresume()</text><!--MD5=[d9e77e0490367ea3d6ab9361585272b1]
+reverse link Cluster to Modeler--><path codeLine="15" d="M169.03,45.73 C193.79,59.55 149.76,122.61 121.33,158.96 " fill="none" id="Cluster-backto-Modeler" style="stroke:#383838;stroke-width:1.0;"/><polygon fill="#383838" points="156,43,161.0505,48.1471,167.7441,45.4648,162.6937,40.3177,156,43" style="stroke:#383838;stroke-width:1.0;"/><!--MD5=[9709e5688948696f9528c2488bf115c9]
+reverse link Modeler to ReplicationsModeler--><path codeLine="19" d="M206.99,201.55 C230.33,214.47 175.07,273.46 139.05,308.38 " fill="none" id="Modeler-backto-ReplicationsModeler" style="stroke:#383838;stroke-width:1.0;"/><polygon fill="#383838" points="194,199,199.1188,204.0792,205.776,201.3077,200.6572,196.2285,194,199" style="stroke:#383838;stroke-width:1.0;"/><!--MD5=[7414db84ce1b87bc3853e42f77fae139]
+link Replication to ReplicationSpace--><path codeLine="26" d="M557,199 C598.83,199 593.89,161.81 626,135 C644.76,119.34 646.81,109.73 670,102 C727.06,82.98 791.38,107.5 839.36,134.87 " fill="none" id="Replication-ReplicationSpace" style="stroke:#383838;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="40" x="671" y="101.4951">returns</text><!--MD5=[976096d7c1a57f714c316fced4541ee5]
+link Replication to ReplicationTask--><path codeLine="30" d="M557,212 C570.51,212 568.66,225.79 581.5,230 C600.5,236.23 607.06,234.71 626.5,230 C629.93,229.17 633.38,228.18 636.81,227.05 " fill="none" id="Replication-ReplicationTask" style="stroke:#383838;stroke-width:1.0;"/><line style="stroke:#383838;stroke-width:1.0;" x1="636.81" x2="646.45" y1="227.05" y2="223.57"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="43" x="582.5" y="226.4951">creates</text><!--MD5=[2e5ec7793a202275ec295593cdf125f7]
+reverse link Replication to ModelerReplication--><path codeLine="34" d="M399.2,246.25 C398.94,265.15 398.67,285.36 398.45,301.67 " fill="none" id="Replication-backto-ModelerReplication" style="stroke:#383838;stroke-width:1.0;"/><polygon fill="none" points="392.2,246.04,399.47,226.14,406.2,246.23,392.2,246.04" style="stroke:#383838;stroke-width:1.0;"/><!--MD5=[6651a8ebdfe73b133a65d6eb7c8eb196]
+link ReplicationsModeler to ModelerReplication--><path codeLine="35" d="M213,348.5 C230.7,348.5 222.03,371.87 238,379.5 C261.26,390.62 270.76,384.76 296,379.5 C304.21,377.79 312.57,375.38 320.79,372.55 " fill="none" id="ReplicationsModeler-ModelerReplication" style="stroke:#383838;stroke-width:1.0;"/><line style="stroke:#383838;stroke-width:1.0;" x1="320.79" x2="330.35" y1="372.55" y2="369.05"/><polygon fill="#000000" points="247.88,371.7646,239.692,366.9265,238.412,372.6633,247.88,371.7646" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="43" x="252" y="375.9951">creates</text><!--MD5=[1f0bba7946b5e705bf7a79246578e35c]
+link ModelerReplication to ReplicationFlow--><path codeLine="39" d="M475,355.5 C490.24,355.5 485.39,373.74 499.5,379.5 C518.02,387.06 524.71,382.37 544.5,379.5 C552.35,378.36 560.37,376.9 568.4,375.21 " fill="none" id="ModelerReplication-ReplicationFlow" style="stroke:#383838;stroke-width:1.0;"/><line style="stroke:#383838;stroke-width:1.0;" x1="568.4" x2="578.2" y1="375.21" y2="373.03"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="43" x="500.5" y="375.9951">creates</text><!--MD5=[6204d115ae9f31f48178d07acb85f13b]
+@startuml Creation of Replication
+'skinparam handwritten true
+skinparam monochrome true
+
+hide fields
+hide methods
+hide circle
+
+'hide package members
+
+!include classes/Cluster.iuml
+show Cluster fields
+
+!include classes/Modeler.iuml
+show Modeler fields
+Cluster::modeler *-down- Modeler
+
+!include classes/ReplicationsModeler.iuml
+show ReplicationsModeler methods
+Modeler::replications *-down- ReplicationsModeler
+
+!include classes/Replication.iuml
+show Replication methods
+
+!include classes/ReplicationSpace.iuml
+show ReplicationSpace methods
+Replication::settargetspace -right- ReplicationSpace : returns
+
+!include classes/ReplicationTask.iuml
+show ReplicationTask methods
+Replication::createtask -right- ReplicationTask : creates
+
+!include classes/ModelerReplication.iuml
+show ModelerReplication methods
+Replication <|-down- ModelerReplication
+ReplicationsModeler::createreplication -right- ModelerReplication : creates >
+
+!include classes/ReplicationFlow.iuml
+show ReplicationFlow methods
+ModelerReplication::deploy -right- ReplicationFlow : creates
+
+@enduml
+
+@startuml Creation of Replication
+skinparam monochrome true
+
+hide fields
+hide methods
+hide circle
+
+
+class Cluster {
+    +modeler : Modeler
+    {static} +connectto(clusterconnectiondata) : Cluster
+}
+show Cluster fields
+
+class Modeler {
+    +replications : ReplicationsModeler
+    +createreplication()
+}
+show Modeler fields
+Cluster::modeler *-down- Modeler
+
+class ReplicationsModeler {
+    +createreplication(name) : Replication
+}
+show ReplicationsModeler methods
+Modeler::replications *-down- ReplicationsModeler
+
+class Replication {
+    +setsourcespace(connectionid, container)
+    +settargetspace(connectionid, container) : ReplicationSpace
+    +createtask(sourcedataset) : ReplicationTask
+}
+show Replication methods
+
+class ReplicationSpace {
+    +setfiletype(filetype)
+    +setgroupdeltaby(groupdeltaby)
+    +setfilecompression(compression)
+    +setfiledilimiter(delimiter)
+    +setfileheader(include)
+}
+show ReplicationSpace methods
+Replication::settargetspace -right- ReplicationSpace : returns
+
+class ReplicationTask {
+    +setsourcedataset(path)
+    +settargetdataset(path)
+    +setloadtype(loadtype)
+}
+show ReplicationTask methods
+Replication::createtask -right- ReplicationTask : creates
+
+class ModelerReplication {
+    +save()
+    +deploy() : ReplicationFlow   
+}
+show ModelerReplication methods
+Replication <|-down- ModelerReplication
+ReplicationsModeler::createreplication -right- ModelerReplication : creates >
+
+class ReplicationFlow {
+    +getchangerequeststatus() : Changerequeststatus
+    +waitwhilebusy() : Changerequeststatus
+    +runorresume()
+}
+show ReplicationFlow methods
+ModelerReplication::deploy -right- ReplicationFlow : creates
+
+@enduml
+
+PlantUML version 1.2021.16(Wed Dec 08 18:25:22 CET 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: US
+--></g></svg>

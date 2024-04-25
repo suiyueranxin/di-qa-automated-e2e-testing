@@ -1,0 +1,5 @@
+class ReplicationTask {
+    +setsourcedataset(path)
+    +settargetdataset(path)
+    +setloadtype(loadtype)
+}

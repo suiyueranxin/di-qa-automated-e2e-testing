@@ -1,0 +1,85 @@
+{
+    "id": "HANA_CLOUD",
+    "description": "CIT HANA CLOUD: 87cc15ab-65ef-4b28-9433-962f7400aecc.hana.canary-eu10.hanacloud.ondemand.com:443\n",
+    "type": "HANA_DB",
+    "contentData": {
+      "host": "87cc15ab-65ef-4b28-9433-962f7400aecc.hana.canary-eu10.hanacloud.ondemand.com",
+      "port": 443,
+      "additionalHosts": [],
+      "useTLS": true,
+      "validateCertificate": false,
+      "hostnameInCertificate": "",
+      "ignoreList": [],
+      "user": "DBA*******"
+    },
+    "tags": [],
+    "tagsFromType": [
+      "db"
+    ],
+    "owner": "system",
+    "ownerDisplayName": "system",
+    "createdBy": "system",
+    "createdByDisplayName": "system",
+    "createdAt": "2021-10-04T09:17:54.512Z",
+    "changedBy": "cit-admin",
+    "changedByDisplayName": "cit-admin",
+    "changedAt": "2021-11-10T02:53:56.000Z",
+    "changedNote": "",
+    "status": {
+      "connectionId": "HANA_CLOUD",
+      "status": "UNKNOWN",
+      "message": ""
+    },
+    "gatewayId": "",
+    "cloudConnectorLocationId": "",
+    "licenseRelevant": true,
+    "readOnly": false,
+    "ccmId": "44ff8f05-9e9c-4c97-abe2-c0260db87f51",
+    "ccmTypeId": "HANA",
+    "typeServices": [
+      {
+        "provider": "com.sap.dh.metadata",
+        "type": "rulesRemoteSource"
+      },
+      {
+        "provider": "com.sap.dh.metadata",
+        "type": "extractLineage"
+      },
+      {
+        "provider": "com.sap.dh.metadata",
+        "type": "extractMetadata"
+      },
+      {
+        "provider": "com.sap.dh.metadata",
+        "type": "profile"
+      },
+      {
+        "provider": "com.sap.dh.metadata",
+        "type": "rules"
+      },
+      {
+        "provider": "com.sap.dh.preparation",
+        "type": "dataprepSource"
+      },
+      {
+        "provider": "com.sap.dh.preparation",
+        "type": "dataprepTarget"
+      },
+      {
+        "provider": "com.sap.dh.flowagent",
+        "type": "com.sap.dh.connection::statusCheck"
+      },
+      {
+        "provider": "com.sap.dh.flowagent",
+        "type": "browse"
+      },
+      {
+        "provider": "com.sap.dh.flowagent",
+        "type": "metadata"
+      },
+      {
+        "provider": "com.sap.dh.flowagent",
+        "type": "dataPreview"
+      }
+    ]
+  }

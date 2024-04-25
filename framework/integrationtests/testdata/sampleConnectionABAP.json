@@ -1,0 +1,64 @@
+  {
+    "id": "S4H_2021",
+    "description": "S4H 2021 - via QOI-927 (GAERTNERNI) ",
+    "type": "ABAP",
+    "contentData": {
+      "sysid": "QOI",
+      "client": "927",
+      "sap_language": "EN",
+      "protocol": "RFC",
+      "loadbalancing": "Without Load Balancing",
+      "ashost": "ldciqoi.wdf.sap.corp",
+      "sysnr": "00",
+      "saprouter": "",
+      "enablesnc": false,
+      "user": "GAE*******",
+      "authentication": "Basic"
+    },
+    "tags": [],
+    "tagsFromType": [
+      "application"
+    ],
+    "owner": "system",
+    "ownerDisplayName": "system",
+    "createdBy": "system",
+    "createdByDisplayName": "system",
+    "createdAt": "2021-10-04T09:31:51.015Z",
+    "changedBy": "d060045",
+    "changedByDisplayName": "d060045",
+    "changedAt": "2021-10-18T11:52:01.767Z",
+    "changedNote": "",
+    "status": {
+      "connectionId": "S4H_2021",
+      "status": "UNKNOWN",
+      "message": ""
+    },
+    "gatewayId": "SAP Cloud Connector",
+    "cloudConnectorLocationId": "",
+    "licenseRelevant": true,
+    "readOnly": false,
+    "ccmId": "663a485a-b7b6-48df-bc22-34d0527c7961",
+    "ccmTypeId": "ABAP",
+    "typeServices": [
+      {
+        "provider": "com.sap.dh.metadata",
+        "type": "extractMetadata"
+      },
+      {
+        "provider": "com.sap.dh.flowagent",
+        "type": "com.sap.dh.connection::statusCheck"
+      },
+      {
+        "provider": "com.sap.dh.flowagent",
+        "type": "browse"
+      },
+      {
+        "provider": "com.sap.dh.flowagent",
+        "type": "metadata"
+      },
+      {
+        "provider": "com.sap.dh.flowagent",
+        "type": "dataPreview"
+      }
+    ]
+  }

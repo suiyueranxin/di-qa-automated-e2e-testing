@@ -1,0 +1,5 @@
+class Replication {
+    +setsourcespace(connectionid, container)
+    +settargetspace(connectionid, container) : ReplicationSpace
+    +createtask(sourcedataset) : ReplicationTask
+}

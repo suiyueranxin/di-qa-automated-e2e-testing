@@ -1,0 +1,57 @@
+pipeline {
+  agent {
+    kubernetes {
+      yamlFile 'jaas/project.yaml'
+    }
+  }
+  stages {
+    stage('Start test case') {
+      steps {
+        container('cit-e2e-testing') {
+          withCredentials([usernamePassword(credentialsId: "Teamscale", usernameVariable: "UPLOAD_USER", passwordVariable: "UPLOAD_TOKEN")]) {
+            sh "coverage run -m xmlrunner discover -s framework/unittests -o testresults -p test*.py"
+            sh "coverage xml -o testresults/coverage.xml"
+            sh 'curl --insecure --request POST --user $UPLOAD_USER:$UPLOAD_TOKEN --form "report=@testresults/coverage.xml" "https://ao.testrunner01.c.eu-de-2.cloud.sap:8080/api/projects/e2e-testing-framework/external-analysis/session/auto-create/report?format=COBERTURA&partition=Unit%20Tests&message=Unit%20Test%20Coverage&revision=$GIT_COMMIT"'
+          }
+        }
+      }
+    }
+  }
+  post {
+    always {
+      junit 'testresults/*.xml'
+      cobertura coberturaReportFile: 'testresults/coverage.xml'
+    }
+    unstable { 
+      emailext (
+        recipientProviders: [developers(), requestor(), brokenTestsSuspects()],
+        subject: "FAILED: $BUILD_DISPLAY_NAME of $JOB_NAME",
+        body: """
+        <p><b>There were unexpected test results in project $JOB_NAME</b></p>
+        <p>${ghprbActualCommitAuthor} was the last committer. Please check the 
+        test results at ${BUILD_URL}testReport/</p>
+        <p>Additional information Project: $JOB_NAME <br>
+        Build Number: $BUILD_NUMBER <br> 
+        Build URL: $BUILD_URL</p>
+        """,
+        mimeType: "text/html"
+      )
+    }
+    changed {
+      // Send email when status has changed back to green / SUCCESS
+      script {
+        if (currentBuild.currentResult == 'SUCCESS') { 
+          emailext (
+            recipientProviders: [developers(), requestor()],
+            subject: "$JOB_NAME is back to normal",
+            body: """
+            <p><b>All tests in project $JOB_NAME are passing again!</b></p>
+            <p>You can check the test results at ${BUILD_URL}testReport/</p>
+            """,
+            mimeType: "text/html"
+          )
+        } 
+      }
+    }
+  }
+}

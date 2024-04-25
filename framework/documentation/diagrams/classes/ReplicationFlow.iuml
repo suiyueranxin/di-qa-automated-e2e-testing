@@ -1,0 +1,5 @@
+class ReplicationFlow {
+    +getchangerequeststatus() : Changerequeststatus
+    +waitwhilebusy() : Changerequeststatus
+    +runorresume()
+}

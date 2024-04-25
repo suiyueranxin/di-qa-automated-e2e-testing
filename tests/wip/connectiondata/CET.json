@@ -1,0 +1,5 @@
+{
+    "name": "CET",
+    "tenant": "central-e2e-test",
+    "baseurl": "https://vsystem.ingress.dh-1n2gaz1i.dh-testing.shoot.canary.k8s-hana.ondemand.com"
+  }

@@ -1,0 +1,21 @@
+/*
+Please note this is not intended to be run on the Jenkins, 
+but on a local developer PC with Windows
+*/
+pipeline {
+  agent {label "builddocker"}
+  stages {
+    stage('Build the dockerimage cit-e2e-testing and publish it to v2-register server') {
+     steps {
+            echo 'Starting to build docker image'
+            bat """
+              docker build -t v2-registry.datahub.only.sap/cit-e2e-testing .
+            """
+            echo 'Starting to publish docker image'
+            bat """
+             docker push v2-registry.datahub.only.sap/cit-e2e-testing
+            """
+        }
+    }
+  }
+}

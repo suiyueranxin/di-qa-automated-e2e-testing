@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels: 
+    project: cit-e2e-testing 
+spec:
+  containers:
+  - name: cit-e2e-testing
+    image: v2-registry.datahub.only.sap/cit-e2e-testing
+    stdin: true
+    tty: true
+  tolerations:
+  - key: "jaasContentType"
+    operator: "Equal"
+    value: "jenkins"
+    effect: "NoSchedule"
+  #   volumeMounts:
+  #   - mountPath: /var/run/docker.sock
+  #     name: dockerVolume
+  #   - mountPath: /root/.kube
+  #     name: kubeVolume
+  # volumes:
+  # - name: dockerVolume
+  #   hostPath:
+  #     path: /var/run/docker.sock
+  #     type: Socket
+  # - name: kubeVolume
+  #   hostPath:
+  #     path: /root/.kube
+  #     type: Directory

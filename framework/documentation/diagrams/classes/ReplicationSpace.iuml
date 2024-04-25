@@ -1,0 +1,7 @@
+class ReplicationSpace {
+    +setfiletype(filetype)
+    +setgroupdeltaby(groupdeltaby)
+    +setfilecompression(compression)
+    +setfiledilimiter(delimiter)
+    +setfileheader(include)
+}

@@ -1,0 +1,41 @@
+{
+  "name": "E2Etest007",
+  "description": "This is the description",
+  "version": "ONE_SOURCE_ONE_TARGET",
+  "sourceSpaces": [
+    {
+      "name": "E2Etest007_S4H_2021_src",
+      "connectionId": "S4H_2021",
+      "connectionType": "ABAP",
+      "technicalName": "S4H_2021",
+      "ccmConnectionId": "S4H_2021",
+      "ccmConnectionType": "ABAP",
+      "container": "/CDS"
+    }
+  ],
+  "targetSpaces": [
+    {
+      "name": "E2Etest007_HANA_CLOUD_tgt",
+      "connectionId": "HANA_CLOUD",
+      "connectionType": "HANA_DB",
+      "technicalName": "HANA_CLOUD",
+      "ccmConnectionId": "HANA_CLOUD",
+      "ccmConnectionType": "HANA",
+      "container": "/SYSTEM"
+    }
+  ],
+  "oneSourceOneTargetTasks": [
+    {
+      "name": "E2Etest007_Z_SEPM_I_SALESORDER_fjg9ao",
+      "description": "",
+      "sourceDataset": "Z_SEPM_I_SALESORDER",
+      "sourceSpace": "E2Etest007_S4H_2021_src",
+      "targetDataset": "Z_SEPM_I_SALESORDER",
+      "targetSpace": "E2Etest007_HANA_CLOUD_tgt",
+      "filter": [],
+      "mappings": [],
+      "loadType": "INITIAL",
+      "truncate": false
+    }
+  ]
+}

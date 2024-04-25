@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="186px" preserveAspectRatio="none" style="width:479px;height:186px;background:#FFFFFF;" version="1.1" viewBox="0 0 479 186" width="479px" zoomAndPan="magnify"><defs><filter height="300%" id="f1w9vg833ny91r" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[26b1154f4b01dec99cfe7f1f8bee6bbb]
+class Cluster--><rect codeLine="0" fill="#F8F8F8" filter="url(#f1w9vg833ny91r)" height="46.9297" id="Cluster" style="stroke:#383838;stroke-width:1.5;" width="232" x="7" y="66.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="40" x="103" y="83.957">Cluster</text><line style="stroke:#383838;stroke-width:1.5;" x1="8" x2="238" y1="91.5938" y2="91.5938"/><ellipse cx="18" cy="102.5938" fill="#A6A6A6" rx="3" ry="3" style="stroke:#545454;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline" textLength="206" x="27" y="107.0127">connectto(clusterconnectiondata) : Cluster</text><!--MD5=[1951cbc46127d727611fe904d62e60f2]
+class ClusterConnectionData--><rect codeLine="0" fill="#F8F8F8" filter="url(#f1w9vg833ny91r)" height="165.6172" id="ClusterConnectionData" style="stroke:#383838;stroke-width:1.5;" width="149" x="316.5" y="7"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="129" x="326.5" y="24.457">ClusterConnectionData</text><line style="stroke:#383838;stroke-width:1.5;" x1="317.5" x2="464.5" y1="32.0938" y2="32.0938"/><polygon fill="none" points="327.5,39.0938,323.5,45.0938,331.5,45.0938" style="stroke:#535353;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="26" x="336.5" y="47.5127">name</text><polygon fill="none" points="327.5,52.9297,323.5,58.9297,331.5,58.9297" style="stroke:#535353;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="36" x="336.5" y="61.3486">baseurl</text><polygon fill="none" points="327.5,66.7656,323.5,72.7656,331.5,72.7656" style="stroke:#535353;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="30" x="336.5" y="75.1846">tenant</text><polygon fill="none" points="327.5,80.6016,323.5,86.6016,331.5,86.6016" style="stroke:#535353;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="22" x="336.5" y="89.0205">user</text><polygon fill="none" points="327.5,94.4375,323.5,100.4375,331.5,100.4375" style="stroke:#535353;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="50" x="336.5" y="102.8564">password</text><line style="stroke:#383838;stroke-width:1.5;" x1="317.5" x2="464.5" y1="109.2734" y2="109.2734"/><ellipse cx="327.5" cy="120.2734" fill="#A6A6A6" rx="3" ry="3" style="stroke:#545454;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="113" x="336.5" y="124.6924">__init__(name, baseurl)</text><ellipse cx="327.5" cy="134.1094" fill="#A6A6A6" rx="3" ry="3" style="stroke:#545454;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="83" x="336.5" y="138.5283">settenant(tenant)</text><ellipse cx="327.5" cy="147.9453" fill="#A6A6A6" rx="3" ry="3" style="stroke:#545454;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="67" x="336.5" y="152.3643">setuser(user)</text><ellipse cx="327.5" cy="161.7813" fill="#A6A6A6" rx="3" ry="3" style="stroke:#545454;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="123" x="336.5" y="166.2002">setpassword(password)</text><!--MD5=[2ab095046239d8d08012b70dc1830296]
+link Cluster to ClusterConnectionData--><path codeLine="14" d="M239.38,90 C265.51,90 292.56,90 316.44,90 " fill="none" id="Cluster-ClusterConnectionData" style="stroke:#383838;stroke-width:1.0;"/><polygon fill="#000000" points="266.25,78.1758,257.2049,75.2369,257.2049,81.1147,266.25,78.1758" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="28" x="270.25" y="83.4951">uses</text><!--MD5=[e4e38add56013daf4b44ec0c5e636e35]
+@startuml Connection to Structure
+skinparam monochrome true
+
+hide fields
+hide methods
+hide circle
+
+!include classes/Cluster.iuml
+show Cluster methods
+
+!include classes/ClusterConnectionData.iuml
+show ClusterConnectionData fields
+show ClusterConnectionData methods
+
+Cluster -right- ClusterConnectionData : uses >
+
+@enduml
+
+@startuml Connection to Structure
+skinparam monochrome true
+
+hide fields
+hide methods
+hide circle
+
+class Cluster {
+    +modeler : Modeler
+    {static} +connectto(clusterconnectiondata) : Cluster
+}
+show Cluster methods
+
+class ClusterConnectionData {
+    ~name
+    ~baseurl
+    ~tenant
+    ~user
+    ~password
+
+    +__init__(name, baseurl)
+    +settenant(tenant)
+    +setuser(user)
+    +setpassword(password)
+}
+show ClusterConnectionData fields
+show ClusterConnectionData methods
+
+Cluster -right- ClusterConnectionData : uses >
+
+@enduml
+
+PlantUML version 1.2021.16(Wed Dec 08 18:25:22 CET 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: US
+--></g></svg>

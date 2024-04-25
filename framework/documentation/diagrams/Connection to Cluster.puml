@@ -1,0 +1,17 @@
+@startuml Connection to Structure
+skinparam monochrome true
+
+hide fields
+hide methods
+hide circle
+
+!include classes/Cluster.iuml
+show Cluster methods
+
+!include classes/ClusterConnectionData.iuml
+show ClusterConnectionData fields
+show ClusterConnectionData methods
+
+Cluster -right- ClusterConnectionData : uses >
+
+@enduml
